@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Tower_of_Hanoi.UserControls.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tower_of_Hanoi.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" 
+             d:DesignWidth="1600"
+             Loaded="UserControl_Loaded">
+
+    <Grid Background="Transparent">
+
+        <Grid.Resources>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Bison"/>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            
+        </Grid.Resources>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel  Grid.Row="1"
+                    Grid.Column="1">
+
+            <TextBox x:Name="txtNameSetter" 
+                     DockPanel.Dock="Top"
+                     Height="100" 
+                     Background="#9E9E9E"
+                     BorderThickness="10"
+                     BorderBrush="White"
+                     Text="Name..."
+                     FontFamily="Bison"
+                     FontSize="60"
+                     Foreground="White"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"/>
+
+            <Grid DockPanel.Dock="Bottom">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Canvas Grid.Row="0">
+
+                    <Grid Canvas.Right="50"
+                          Canvas.Top="50"
+                          Width="300"
+                          Height="150">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" 
+                               Content="Difficulty:"
+                               HorizontalContentAlignment="Left"
+                               VerticalContentAlignment="Center"
+                               FontSize="30" 
+                               FontFamily="Bison"
+                               Foreground="White"/>
+
+                        <DockPanel Grid.Row="1"
+                                   LastChildFill="True">
+
+                            <Button x:Name="btnDifficultyChanger" 
+                                    DockPanel.Dock="Right"
+                                    Width="75"
+                                    BorderThickness="5"
+                                    BorderBrush="White"
+                                    Background="#9E9E9E"
+                                    Click="btnDifficultyChanger_Click"/>
+
+                            <Border Width="225">
+                                <TextBlock x:Name="lblDifficulty"
+                                           Text="Easy"
+                                           TextAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontSize="65"/>
+                            </Border>
+
+                        </DockPanel>
+
+                    </Grid>
+
+                </Canvas>
+
+                <Button Grid.Row="1" 
+                        x:Name="btnContinue"
+                        Content="Continue"
+                        Background="#9E9E9E"
+                        BorderThickness="10"
+                        BorderBrush="White"
+                        Width="500"
+                        Height="150"
+                        Foreground="White"
+                        FontSize="50"
+                        FontFamily="Bison"
+                        Click="btnContinue_Click"/>
+
+            </Grid>
+
+        </DockPanel>
+
+
+    </Grid>
+</UserControl>
